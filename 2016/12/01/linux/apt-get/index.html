@@ -6,21 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Centos 6.5升级到Git2.1.2 | 致力于互联网技术</title>
+  <title>apt-get机制详解 | 致力于互联网技术</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装需求12# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel# yum install  gcc perl-ExtUtils-MakeMaker
-下载git2.1.2123# cd /usr/src# wget https://www.kernel.org/pub/software/scm/git">
+  <meta name="description" content="包信息12345678910Version: 0.4.9-3ubuntu7.9Replaces: multipath-tools (&amp;lt;&amp;lt; 0.4.7-3)Depends: libc6 (&amp;gt;= 2.4), libdevmapper1.02.1 (&amp;gt;= 2:1.02.36), udev (&amp;gt;&amp;gt; 136-1), dmsetup (&amp;gt;= 2:1.02.24)Siz">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos 6.5升级到Git2.1.2">
-<meta property="og:url" content="http://yoursite.com/2016/12/01/git/update_git/index.html">
+<meta property="og:title" content="apt-get机制详解">
+<meta property="og:url" content="http://yoursite.com/2016/12/01/linux/apt-get/index.html">
 <meta property="og:site_name" content="致力于互联网技术">
-<meta property="og:description" content="安装需求12# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel# yum install  gcc perl-ExtUtils-MakeMaker
-下载git2.1.2123# cd /usr/src# wget https://www.kernel.org/pub/software/scm/git">
-<meta property="og:updated_time" content="2016-12-02T11:04:41.000Z">
+<meta property="og:description" content="包信息12345678910Version: 0.4.9-3ubuntu7.9Replaces: multipath-tools (&amp;lt;&amp;lt; 0.4.7-3)Depends: libc6 (&amp;gt;= 2.4), libdevmapper1.02.1 (&amp;gt;= 2:1.02.36), udev (&amp;gt;&amp;gt; 136-1), dmsetup (&amp;gt;= 2:1.02.24)Siz">
+<meta property="og:updated_time" content="2016-12-02T10:22:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos 6.5升级到Git2.1.2">
-<meta name="twitter:description" content="安装需求12# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel# yum install  gcc perl-ExtUtils-MakeMaker
-下载git2.1.2123# cd /usr/src# wget https://www.kernel.org/pub/software/scm/git">
+<meta name="twitter:title" content="apt-get机制详解">
+<meta name="twitter:description" content="包信息12345678910Version: 0.4.9-3ubuntu7.9Replaces: multipath-tools (&amp;lt;&amp;lt; 0.4.7-3)Depends: libc6 (&amp;gt;= 2.4), libdevmapper1.02.1 (&amp;gt;= 2:1.02.36), udev (&amp;gt;&amp;gt; 136-1), dmsetup (&amp;gt;= 2:1.02.24)Siz">
   
     <link rel="alternative" href="/atom.xml" title="致力于互联网技术" type="application/atom+xml">
   
@@ -139,28 +136,29 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-git/update_git" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-linux/apt-get" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Centos 6.5升级到Git2.1.2
+      apt-get机制详解
     </h1>
   
 
-        <a href="/2016/12/01/git/update_git/" class="archive-article-date">
+        <a href="/2016/12/01/linux/apt-get/" class="archive-article-date">
   	<time datetime="2016-12-01T13:05:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="安装需求"><a href="#安装需求" class="headerlink" title="安装需求"></a>安装需求</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span></div><div class="line"><span class="comment"># yum install  gcc perl-ExtUtils-MakeMaker</span></div></pre></td></tr></table></figure>
-<h3 id="下载git2-1-2"><a href="#下载git2-1-2" class="headerlink" title="下载git2.1.2"></a>下载git2.1.2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># cd /usr/src</span></div><div class="line"><span class="comment"># wget https://www.kernel.org/pub/software/scm/git/git-2.1.2.tar.gz</span></div><div class="line"><span class="comment"># tar xzf git-2.1.2.tar.gz</span></div></pre></td></tr></table></figure>
-<h3 id="安装git并添加到环境变量中"><a href="#安装git并添加到环境变量中" class="headerlink" title="安装git并添加到环境变量中"></a>安装git并添加到环境变量中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># cd git-2.1.2</span></div><div class="line"><span class="comment"># make prefix=/usr/local/git all</span></div><div class="line"><span class="comment"># make prefix=/usr/local/git install</span></div><div class="line"><span class="comment"># echo "export PATH=$PATH:/usr/local/git/bin"&gt;&gt;/etc/bashrc</span></div><div class="line"><span class="comment"># source /etc/bashrc</span></div></pre></td></tr></table></figure>
-<h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># git --version</span></div><div class="line"> git version 2.1.2</div></pre></td></tr></table></figure>
+        <h3 id="包信息"><a href="#包信息" class="headerlink" title="包信息"></a>包信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Version: 0.4.9-3ubuntu7.9</div><div class="line">Replaces: multipath-tools (&lt;&lt; 0.4.7-3)</div><div class="line">Depends: libc6 (&gt;= 2.4), libdevmapper1.02.1 (&gt;= 2:1.02.36), udev (&gt;&gt; 136-1), dmsetup (&gt;= 2:1.02.24)</div><div class="line">Size: 23074</div><div class="line">Description: create device mappings for partitions</div><div class="line">Kpartx can be used to set up device mappings for the partitions of any</div><div class="line">partitioned block device. It is part of the Linux multipath-tools.</div><div class="line">Homepage: http://christophe.varoqui.free.fr/</div><div class="line">Original-Maintainer: Debian LVM Team &lt;pkg-lvm-maintainers@lists.alioth.debian.org&gt;</div><div class="line">Package:包名，Priority：优先级，其他字段含义不一一介绍了。</div></pre></td></tr></table></figure>
+<h3 id="临时安装包"><a href="#临时安装包" class="headerlink" title="临时安装包"></a>临时安装包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">查看/var/cache/apt/archives/目录,里面存放的apt-get install的临时安装包</div><div class="line">查看/var/lib/apt/lists文件，里面存放apt-get update命令保存的从/etc/apt/sources.list中的url下载来软件包列表</div></pre></td></tr></table></figure>
+<h3 id="包信息获取"><a href="#包信息获取" class="headerlink" title="包信息获取"></a>包信息获取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">执行apt-get install后，apt-get 会从apt仓库中读取Packages.gz中获取到所有包的信息,下载到本地/var/cache/apt/archives/中，然后执行安装操作。</div></pre></td></tr></table></figure>
+<h3 id="建立个人apt-get-源"><a href="#建立个人apt-get-源" class="headerlink" title="建立个人apt-get 源"></a>建立个人apt-get 源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">安装apache</div><div class="line">sudo apt-get install apache2</div><div class="line">在/var/www/html建立deb目录，把准备好的.deb文件放到此目录，使用dpkg-scanpackages 建立Packages.gz文件</div><div class="line">在浏览器的中输入http://localhost/deb/ 能够正常显示这个目录中的文件，则表示这个apt个人源搭建成功了</div></pre></td></tr></table></figure>
+<h3 id="测试个人源"><a href="#测试个人源" class="headerlink" title="测试个人源"></a>测试个人源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">修改/etc/apt/sources.list文件,添加一行  deb http://[服务器地址]/deb ./</div><div class="line">使用apt-get update 后，apt-get install可以安装个人源的软件包了</div></pre></td></tr></table></figure>
 
       
 
@@ -203,7 +201,7 @@
       
 	<div class="article-category tagcloud">
 	<i class="icon-calendar"></i>
-	<a class="article-category-link" href="/categories/git/">git</a>
+	<a class="article-category-link" href="/categories/Linux/">Linux</a>
 	</div>
 
 
@@ -266,9 +264,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2016/12/01/git/update_git/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Centos 6.5升级到Git2.1.2
+        
+      </div>
+    </a>
   
-    <a href="/2016/12/01/linux/apt-get/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">apt-get机制详解</div>
+  
+    <a href="/2016/12/01/mac/intall_linux/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mac上制作linux系统U盘安装盘</div>
       <i class="icon-circle-right"></i>
     </a>
   

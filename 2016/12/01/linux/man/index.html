@@ -6,21 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Centos 6.5升级到Git2.1.2 | 致力于互联网技术</title>
+  <title>man手册基本结构 | 致力于互联网技术</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装需求12# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel# yum install  gcc perl-ExtUtils-MakeMaker
-下载git2.1.2123# cd /usr/src# wget https://www.kernel.org/pub/software/scm/git">
+  <meta name="description" content="man手册乱码简单的解决方法在命令行输入1export LANG=en
+man 手册基本结构1手册的章节，1-9
+man命令格式1man [#] COMMAND
+###查看哪些章节下有这个COMMAND1whites COMMAND
+
+
+手册段落
+     NAME:命令名称      OPTIONS:命令选项      DESCRIPTION:命令功能的详细描述      SYNOPSIS:使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos 6.5升级到Git2.1.2">
-<meta property="og:url" content="http://yoursite.com/2016/12/01/git/update_git/index.html">
+<meta property="og:title" content="man手册基本结构">
+<meta property="og:url" content="http://yoursite.com/2016/12/01/linux/man/index.html">
 <meta property="og:site_name" content="致力于互联网技术">
-<meta property="og:description" content="安装需求12# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel# yum install  gcc perl-ExtUtils-MakeMaker
-下载git2.1.2123# cd /usr/src# wget https://www.kernel.org/pub/software/scm/git">
-<meta property="og:updated_time" content="2016-12-02T11:04:41.000Z">
+<meta property="og:description" content="man手册乱码简单的解决方法在命令行输入1export LANG=en
+man 手册基本结构1手册的章节，1-9
+man命令格式1man [#] COMMAND
+###查看哪些章节下有这个COMMAND1whites COMMAND
+
+
+手册段落
+     NAME:命令名称      OPTIONS:命令选项      DESCRIPTION:命令功能的详细描述      SYNOPSIS:使用">
+<meta property="og:updated_time" content="2016-12-02T11:20:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos 6.5升级到Git2.1.2">
-<meta name="twitter:description" content="安装需求12# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel# yum install  gcc perl-ExtUtils-MakeMaker
-下载git2.1.2123# cd /usr/src# wget https://www.kernel.org/pub/software/scm/git">
+<meta name="twitter:title" content="man手册基本结构">
+<meta name="twitter:description" content="man手册乱码简单的解决方法在命令行输入1export LANG=en
+man 手册基本结构1手册的章节，1-9
+man命令格式1man [#] COMMAND
+###查看哪些章节下有这个COMMAND1whites COMMAND
+
+
+手册段落
+     NAME:命令名称      OPTIONS:命令选项      DESCRIPTION:命令功能的详细描述      SYNOPSIS:使用">
   
     <link rel="alternative" href="/atom.xml" title="致力于互联网技术" type="application/atom+xml">
   
@@ -139,28 +157,33 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-git/update_git" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-linux/man" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Centos 6.5升级到Git2.1.2
+      man手册基本结构
     </h1>
   
 
-        <a href="/2016/12/01/git/update_git/" class="archive-article-date">
+        <a href="/2016/12/01/linux/man/" class="archive-article-date">
   	<time datetime="2016-12-01T13:05:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="安装需求"><a href="#安装需求" class="headerlink" title="安装需求"></a>安装需求</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span></div><div class="line"><span class="comment"># yum install  gcc perl-ExtUtils-MakeMaker</span></div></pre></td></tr></table></figure>
-<h3 id="下载git2-1-2"><a href="#下载git2-1-2" class="headerlink" title="下载git2.1.2"></a>下载git2.1.2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># cd /usr/src</span></div><div class="line"><span class="comment"># wget https://www.kernel.org/pub/software/scm/git/git-2.1.2.tar.gz</span></div><div class="line"><span class="comment"># tar xzf git-2.1.2.tar.gz</span></div></pre></td></tr></table></figure>
-<h3 id="安装git并添加到环境变量中"><a href="#安装git并添加到环境变量中" class="headerlink" title="安装git并添加到环境变量中"></a>安装git并添加到环境变量中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># cd git-2.1.2</span></div><div class="line"><span class="comment"># make prefix=/usr/local/git all</span></div><div class="line"><span class="comment"># make prefix=/usr/local/git install</span></div><div class="line"><span class="comment"># echo "export PATH=$PATH:/usr/local/git/bin"&gt;&gt;/etc/bashrc</span></div><div class="line"><span class="comment"># source /etc/bashrc</span></div></pre></td></tr></table></figure>
-<h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># git --version</span></div><div class="line"> git version 2.1.2</div></pre></td></tr></table></figure>
+        <h3 id="man手册乱码简单的解决方法在命令行输入"><a href="#man手册乱码简单的解决方法在命令行输入" class="headerlink" title="man手册乱码简单的解决方法在命令行输入"></a>man手册乱码简单的解决方法在命令行输入</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">export LANG=en</div></pre></td></tr></table></figure>
+<h3 id="man-手册基本结构"><a href="#man-手册基本结构" class="headerlink" title="man 手册基本结构"></a>man 手册基本结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">手册的章节，1-9</div></pre></td></tr></table></figure>
+<h3 id="man命令格式"><a href="#man命令格式" class="headerlink" title="man命令格式"></a>man命令格式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">man [#] COMMAND</div></pre></td></tr></table></figure>
+<p>###查看哪些章节下有这个COMMAND<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">whites COMMAND</div></pre></td></tr></table></figure></p>
+<hr>
+<blockquote>
+<p><strong>手册段落</strong></p>
+<ul><br>    <li> NAME:命令名称 </li><br>    <li> OPTIONS:命令选项 </li><br>    <li> DESCRIPTION:命令功能的详细描述 </li><br>    <li> SYNOPSIS:使用格式 </li><br>    <li> EXAMPLES:使用实例 </li><br>    <li> FIlES:与命令相关的配置文件 </li><br>    <li> SEE ALSO:可参考的其他手册 </li><br></ul><br><strong>帮助中的格式字串</strong><br><ul><br>    <li>[] 可省略</li><br>    <li>&#60;&#62; 不可省略</li><br>    <li>| 二选一，多选一</li><br>    <li>… 同类内容中可以出现多个</li><br></ul><br><strong>man操作</strong><br><ul><br>    <li>空格键 向尾部翻屏</li><br>    <li>b 想前翻屏</li><br>    <li>ctrl + d尾部翻半屏</li><br>    <li>ctrl + u 向前翻半屏</li><br></ul><br><strong>字符搜索</strong><br><ul><br>    <li>/keyword</li><br>    <li>？keyword</li><br>    <li>n下一个定位的字符</li><br>    <li>N上一个定位的字符</li><br></ul>
+</blockquote>
 
       
 
@@ -203,7 +226,7 @@
       
 	<div class="article-category tagcloud">
 	<i class="icon-calendar"></i>
-	<a class="article-category-link" href="/categories/git/">git</a>
+	<a class="article-category-link" href="/categories/Linux/">Linux</a>
 	</div>
 
 
@@ -266,9 +289,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2016/12/01/mac/intall_linux/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          mac上制作linux系统U盘安装盘
+        
+      </div>
+    </a>
   
-    <a href="/2016/12/01/linux/apt-get/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">apt-get机制详解</div>
+  
+    <a href="/2016/12/01/linux/shareDir/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用VirtualBox使centos和win7共享文件夹设置</div>
       <i class="icon-circle-right"></i>
     </a>
   

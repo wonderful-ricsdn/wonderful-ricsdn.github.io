@@ -6,21 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Centos 6.5升级到Git2.1.2 | 致力于互联网技术</title>
+  <title>使用VirtualBox使centos和win7共享文件夹设置 | 致力于互联网技术</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装需求12# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel# yum install  gcc perl-ExtUtils-MakeMaker
-下载git2.1.2123# cd /usr/src# wget https://www.kernel.org/pub/software/scm/git">
+  <meta name="description" content="增强工具安装
+
+运行centos虚拟机，打开设备菜单中点击安装增强功能，悬浮鼠标在右下角的光盘图标上，可以看到当前光盘中是VBoxGuestAdditions.iso，这个是安装增强功能的镜像文件    
+
+进入centos，在/media下面mkdir cdrom，然后执行mount -t iso9660 /dev/cdrom /media/cdrom，挂载光驱到文件系统，打开/media/cd">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Centos 6.5升级到Git2.1.2">
-<meta property="og:url" content="http://yoursite.com/2016/12/01/git/update_git/index.html">
+<meta property="og:title" content="使用VirtualBox使centos和win7共享文件夹设置">
+<meta property="og:url" content="http://yoursite.com/2016/12/01/linux/shareDir/index.html">
 <meta property="og:site_name" content="致力于互联网技术">
-<meta property="og:description" content="安装需求12# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel# yum install  gcc perl-ExtUtils-MakeMaker
-下载git2.1.2123# cd /usr/src# wget https://www.kernel.org/pub/software/scm/git">
-<meta property="og:updated_time" content="2016-12-02T11:04:41.000Z">
+<meta property="og:description" content="增强工具安装
+
+运行centos虚拟机，打开设备菜单中点击安装增强功能，悬浮鼠标在右下角的光盘图标上，可以看到当前光盘中是VBoxGuestAdditions.iso，这个是安装增强功能的镜像文件    
+
+进入centos，在/media下面mkdir cdrom，然后执行mount -t iso9660 /dev/cdrom /media/cdrom，挂载光驱到文件系统，打开/media/cd">
+<meta property="og:updated_time" content="2016-12-02T11:26:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Centos 6.5升级到Git2.1.2">
-<meta name="twitter:description" content="安装需求12# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel# yum install  gcc perl-ExtUtils-MakeMaker
-下载git2.1.2123# cd /usr/src# wget https://www.kernel.org/pub/software/scm/git">
+<meta name="twitter:title" content="使用VirtualBox使centos和win7共享文件夹设置">
+<meta name="twitter:description" content="增强工具安装
+
+运行centos虚拟机，打开设备菜单中点击安装增强功能，悬浮鼠标在右下角的光盘图标上，可以看到当前光盘中是VBoxGuestAdditions.iso，这个是安装增强功能的镜像文件    
+
+进入centos，在/media下面mkdir cdrom，然后执行mount -t iso9660 /dev/cdrom /media/cdrom，挂载光驱到文件系统，打开/media/cd">
   
     <link rel="alternative" href="/atom.xml" title="致力于互联网技术" type="application/atom+xml">
   
@@ -139,28 +148,44 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-git/update_git" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-linux/shareDir" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Centos 6.5升级到Git2.1.2
+      使用VirtualBox使centos和win7共享文件夹设置
     </h1>
   
 
-        <a href="/2016/12/01/git/update_git/" class="archive-article-date">
+        <a href="/2016/12/01/linux/shareDir/" class="archive-article-date">
   	<time datetime="2016-12-01T13:05:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-01</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="安装需求"><a href="#安装需求" class="headerlink" title="安装需求"></a>安装需求</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel</span></div><div class="line"><span class="comment"># yum install  gcc perl-ExtUtils-MakeMaker</span></div></pre></td></tr></table></figure>
-<h3 id="下载git2-1-2"><a href="#下载git2-1-2" class="headerlink" title="下载git2.1.2"></a>下载git2.1.2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># cd /usr/src</span></div><div class="line"><span class="comment"># wget https://www.kernel.org/pub/software/scm/git/git-2.1.2.tar.gz</span></div><div class="line"><span class="comment"># tar xzf git-2.1.2.tar.gz</span></div></pre></td></tr></table></figure>
-<h3 id="安装git并添加到环境变量中"><a href="#安装git并添加到环境变量中" class="headerlink" title="安装git并添加到环境变量中"></a>安装git并添加到环境变量中</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># cd git-2.1.2</span></div><div class="line"><span class="comment"># make prefix=/usr/local/git all</span></div><div class="line"><span class="comment"># make prefix=/usr/local/git install</span></div><div class="line"><span class="comment"># echo "export PATH=$PATH:/usr/local/git/bin"&gt;&gt;/etc/bashrc</span></div><div class="line"><span class="comment"># source /etc/bashrc</span></div></pre></td></tr></table></figure>
-<h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># git --version</span></div><div class="line"> git version 2.1.2</div></pre></td></tr></table></figure>
+        <h3 id="增强工具安装"><a href="#增强工具安装" class="headerlink" title="增强工具安装"></a>增强工具安装</h3><blockquote>
+<ol>
+<li><p>运行centos虚拟机，打开设备菜单中点击安装增强功能，悬浮鼠标在右下角的光盘图标上，可以看到当前光盘中是VBoxGuestAdditions.iso，这个是安装增强功能的镜像文件    </p>
+</li>
+<li><p>进入centos，在/media下面mkdir cdrom，然后执行mount -t iso9660 /dev/cdrom /media/cdrom，挂载光驱到文件系统，打开/media/cdrom，这里可以看到VBoxLinuxAdditions.run，这个是我们需要运行的文件，这里就可以安装增强工具了。</p>
+</li>
+<li><p>不过首先要安装yum install kernel-devel kernel-headers以及yum install gcc和yum install make，这样安装了还是不行，需要链接一下安装的kernel库，ln -s /usr/src/kernels/2.6.32-431.11.2.el6.x86_64/ /usr/src/linux （32位系统则执行  ln -s /usr/src/kernels/2.6.32-642.1.1.el6.i686/ /usr/src/linux），（用yum安装时最好先用yum search 搜索下相应的程序,不同的版本可能会有不一样的后缀如有的可能是.i386），安装完成后需重启机器</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="设置共享"><a href="#设置共享" class="headerlink" title="设置共享"></a>设置共享</h3><blockquote>
+<ol>
+<li><p>最后在挂载光驱中执行./VBoxLinuxAdditions.run，等待完成就OK，这里可能有几个错误，不过没有关系，它主要是因为UI系统的功能没有安装成功，如果你没有安装x11的话。</p>
+</li>
+<li><p>虚拟机的设备菜单中选择“共享文件夹”，添加固定分配的共享文件夹，选择需要共享到虚拟机的win7文件夹。设置完成后，进行centos，执行mkdir /mnt/share，然后执行mount -t vboxsf pywork /mnt/share，需要注意挂载文件夹名不要和共享文件夹名相同。</p>
+</li>
+<li><p>进行/mnt/share，执行ls -l，可以看到win7的文件夹内容完全可以在linux下面访问了，而且可以直接用centos下面的命令，运行之</p>
+</li>
+</ol>
+</blockquote>
 
       
 
@@ -203,7 +228,7 @@
       
 	<div class="article-category tagcloud">
 	<i class="icon-calendar"></i>
-	<a class="article-category-link" href="/categories/git/">git</a>
+	<a class="article-category-link" href="/categories/Linux/">Linux</a>
 	</div>
 
 
@@ -266,11 +291,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2016/12/01/linux/apt-get/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">apt-get机制详解</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2016/12/01/linux/man/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          man手册基本结构
+        
+      </div>
     </a>
+  
   
 </nav>
 
