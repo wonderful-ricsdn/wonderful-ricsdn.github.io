@@ -5,31 +5,25 @@
   
   <title>apt-get机制详解 | 学无止境</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="包信息
-
-Version: 0.4.9-3ubuntu7.9
+  <meta name="description" content="包信息Version: 0.4.9-3ubuntu7.9
 Replaces: multipath-tools (&amp;lt;&amp;lt; 0.4.7-3)
 Depends: libc6 (&amp;gt;= 2.4), libdevmapper1.02.1 (&amp;gt;= 2:1.02.36), udev (&amp;gt;&amp;gt; 136-1), dmsetup (&amp;gt;= 2:1.02.24)
-Size: 23">
+Size: 23074">
 <meta property="og:type" content="article">
 <meta property="og:title" content="apt-get机制详解">
 <meta property="og:url" content="http://yoursite.com/2016/12/01/apt-get/index.html">
 <meta property="og:site_name" content="学无止境">
-<meta property="og:description" content="包信息
-
-Version: 0.4.9-3ubuntu7.9
+<meta property="og:description" content="包信息Version: 0.4.9-3ubuntu7.9
 Replaces: multipath-tools (&amp;lt;&amp;lt; 0.4.7-3)
 Depends: libc6 (&amp;gt;= 2.4), libdevmapper1.02.1 (&amp;gt;= 2:1.02.36), udev (&amp;gt;&amp;gt; 136-1), dmsetup (&amp;gt;= 2:1.02.24)
-Size: 23">
-<meta property="og:updated_time" content="2016-12-01T13:54:25.000Z">
+Size: 23074">
+<meta property="og:updated_time" content="2016-12-02T00:39:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="apt-get机制详解">
-<meta name="twitter:description" content="包信息
-
-Version: 0.4.9-3ubuntu7.9
+<meta name="twitter:description" content="包信息Version: 0.4.9-3ubuntu7.9
 Replaces: multipath-tools (&amp;lt;&amp;lt; 0.4.7-3)
 Depends: libc6 (&amp;gt;= 2.4), libdevmapper1.02.1 (&amp;gt;= 2:1.02.36), udev (&amp;gt;&amp;gt; 136-1), dmsetup (&amp;gt;= 2:1.02.24)
-Size: 23">
+Size: 23074">
   
     <link rel="alternate" href="/atom.xml" title="学无止境" type="application/atom+xml">
   
@@ -100,10 +94,7 @@ Size: 23">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>包信息</p>
-</blockquote>
-<pre><code>Version: 0.4.9-3ubuntu7.9
+        <h3 id="包信息"><a href="#包信息" class="headerlink" title="包信息"></a>包信息</h3><pre><code>Version: 0.4.9-3ubuntu7.9
 Replaces: multipath-tools (&lt;&lt; 0.4.7-3)
 Depends: libc6 (&gt;= 2.4), libdevmapper1.02.1 (&gt;= 2:1.02.36), udev (&gt;&gt; 136-1), dmsetup (&gt;= 2:1.02.24)
 Size: 23074
@@ -113,32 +104,20 @@ partitioned block device. It is part of the Linux multipath-tools.
 Homepage: http://christophe.varoqui.free.fr/
 Original-Maintainer: Debian LVM Team &lt;pkg-lvm-maintainers@lists.alioth.debian.org&gt;
 Package:包名，Priority：优先级，其他字段含义不一一介绍了。
-</code></pre><blockquote>
-<p>临时安装包</p>
-</blockquote>
-<pre><code>查看/var/cache/apt/archives/目录,里面存放的apt-get install的临时安装包
+</code></pre><h3 id="临时安装包"><a href="#临时安装包" class="headerlink" title="临时安装包"></a>临时安装包</h3><pre><code>查看/var/cache/apt/archives/目录,里面存放的apt-get install的临时安装包
 查看/var/lib/apt/lists文件，里面存放apt-get update命令保存的从/etc/apt/sources.list中的url下载来软件包列表
-</code></pre><blockquote>
-<p>包信息获取</p>
-</blockquote>
-<pre><code>执行apt-get install后，apt-get 会从apt仓库中读取Packages.gz中获取到所有包的信息,下载到本地/var/cache/apt/archives/中，然后执行安装操作。
-</code></pre><blockquote>
-<p>建立个人apt-get 源</p>
-</blockquote>
-<pre><code>安装apache
+</code></pre><h3 id="包信息获取"><a href="#包信息获取" class="headerlink" title="包信息获取"></a>包信息获取</h3><pre><code>执行apt-get install后，apt-get 会从apt仓库中读取Packages.gz中获取到所有包的信息,下载到本地/var/cache/apt/archives/中，然后执行安装操作。
+</code></pre><h3 id="建立个人apt-get-源"><a href="#建立个人apt-get-源" class="headerlink" title="建立个人apt-get 源"></a>建立个人apt-get 源</h3><pre><code>安装apache
 sudo apt-get install apache2
 在/var/www/html建立deb目录，把准备好的.deb文件放到此目录，使用dpkg-scanpackages 建立Packages.gz文件
 在浏览器的中输入http://localhost/deb/ 能够正常显示这个目录中的文件，则表示这个apt个人源搭建成功了
-</code></pre><blockquote>
-<p>测试个人源</p>
-</blockquote>
-<pre><code>修改/etc/apt/sources.list文件,添加一行  deb http://[服务器地址]/deb ./
+</code></pre><h3 id="测试个人源"><a href="#测试个人源" class="headerlink" title="测试个人源"></a>测试个人源</h3><pre><code>修改/etc/apt/sources.list文件,添加一行  deb http://[服务器地址]/deb ./
 使用apt-get update 后，apt-get install可以安装个人源的软件包了
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/01/apt-get/" data-id="ciw6fap7a0000is9y7jtpysqa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/12/01/apt-get/" data-id="ciw72ckom0000l49y5dm0hwyh" class="article-share-link">Share</a>
       
       
     </footer>
