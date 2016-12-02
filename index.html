@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -89,15 +89,14 @@
       
         <h3 id="包信息"><a href="#包信息" class="headerlink" title="包信息"></a>包信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Version: 0.4.9-3ubuntu7.9</div><div class="line">Replaces: multipath-tools (&lt;&lt; 0.4.7-3)</div><div class="line">Depends: libc6 (&gt;= 2.4), libdevmapper1.02.1 (&gt;= 2:1.02.36), udev (&gt;&gt; 136-1), dmsetup (&gt;= 2:1.02.24)</div><div class="line">Size: 23074</div><div class="line">Description: create device mappings for partitions</div><div class="line">Kpartx can be used to set up device mappings for the partitions of any</div><div class="line">partitioned block device. It is part of the Linux multipath-tools.</div><div class="line">Homepage: http://christophe.varoqui.free.fr/</div><div class="line">Original-Maintainer: Debian LVM Team &lt;pkg-lvm-maintainers@lists.alioth.debian.org&gt;</div><div class="line">Package:包名，Priority：优先级，其他字段含义不一一介绍了。</div></pre></td></tr></table></figure>
 <h3 id="临时安装包"><a href="#临时安装包" class="headerlink" title="临时安装包"></a>临时安装包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">查看/var/cache/apt/archives/目录,里面存放的apt-get install的临时安装包</div><div class="line">查看/var/lib/apt/lists文件，里面存放apt-get update命令保存的从/etc/apt/sources.list中的url下载来软件包列表</div></pre></td></tr></table></figure>
-<h3 id="包信息获取"><a href="#包信息获取" class="headerlink" title="包信息获取"></a>包信息获取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">执行apt-get install后，apt-get 会从apt仓库中读取Packages.gz中获取到所有包的信息,下载到本地/var/cache/apt/archives/中，然后执行安装操作。</div><div class="line"></div><div class="line">### 建立个人apt-get 源</div></pre></td></tr></table></figure>
-<p>安装apache<br>sudo apt-get install apache2<br>在/var/www/html建立deb目录，把准备好的.deb文件放到此目录，使用dpkg-scanpackages 建立Packages.gz文件<br>在浏览器的中输入<a href="http://localhost/deb/" target="_blank" rel="external">http://localhost/deb/</a> 能够正常显示这个目录中的文件，则表示这个apt个人源搭建成功了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">### 测试个人源</div></pre></td></tr></table></figure></p>
-<p>修改/etc/apt/sources.list文件,添加一行  deb <a href="http://[服务器地址]/deb" target="_blank" rel="external">http://[服务器地址]/deb</a> ./<br>使用apt-get update 后，apt-get install可以安装个人源的软件包了</p>
-<p>```</p>
+<h3 id="包信息获取"><a href="#包信息获取" class="headerlink" title="包信息获取"></a>包信息获取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">执行apt-get install后，apt-get 会从apt仓库中读取Packages.gz中获取到所有包的信息,下载到本地/var/cache/apt/archives/中，然后执行安装操作。</div></pre></td></tr></table></figure>
+<h3 id="建立个人apt-get-源"><a href="#建立个人apt-get-源" class="headerlink" title="建立个人apt-get 源"></a>建立个人apt-get 源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">安装apache</div><div class="line">sudo apt-get install apache2</div><div class="line">在/var/www/html建立deb目录，把准备好的.deb文件放到此目录，使用dpkg-scanpackages 建立Packages.gz文件</div><div class="line">在浏览器的中输入http://localhost/deb/ 能够正常显示这个目录中的文件，则表示这个apt个人源搭建成功了</div></pre></td></tr></table></figure>
+<h3 id="测试个人源"><a href="#测试个人源" class="headerlink" title="测试个人源"></a>测试个人源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">修改/etc/apt/sources.list文件,添加一行  deb http://[服务器地址]/deb ./</div><div class="line">使用apt-get update 后，apt-get install可以安装个人源的软件包了</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/01/apt-get/" data-id="ciw7ld29q0000h89ysmynimbi" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/12/01/apt-get/" data-id="ciw7lj7eu0000jw9ys7x1taml" class="article-share-link">Share</a>
       
       
     </footer>
@@ -114,7 +113,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a></li></ul>
     </div>
@@ -139,7 +138,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -160,7 +159,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 wonderful<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
